@@ -1,0 +1,53 @@
+﻿  BlockPuzzle.cpp
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(141,37): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(220,18): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(222,19): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(274,19): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(275,16): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(277,24): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(277,45): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(304,17): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(312,65): warning C4244: 'argument': conversion from 'T' to 'int32_t', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(320,24): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(277,1): warning C4102: 'std': unreferenced label
+  BlockPuzzleGame.vcxproj -> D:\BlockPuzzleGame\Debug\BlockPuzzleGame.exe
