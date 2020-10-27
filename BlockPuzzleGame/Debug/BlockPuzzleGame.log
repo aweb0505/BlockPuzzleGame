@@ -1,53 +1,55 @@
 ﻿  BlockPuzzle.cpp
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(141,37): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(199,40): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(220,18): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(281,18): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(222,19): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(283,19): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(274,19): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(335,19): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(275,16): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(336,16): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(277,24): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(338,24): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(277,45): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(338,45): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(304,17): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(366,17): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(312,65): warning C4244: 'argument': conversion from 'T' to 'int32_t', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(370,16): warning C4018: '>=': signed/unsigned mismatch
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(385,65): warning C4244: 'argument': conversion from 'T' to 'int32_t', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(320,24): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(393,24): warning C4244: 'argument': conversion from 'T' to 'const unsigned int', possible loss of data
           with
           [
               T=float
           ]
-D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(277,1): warning C4102: 'std': unreferenced label
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(403,13): warning C4018: '>=': signed/unsigned mismatch
+D:\BlockPuzzleGame\BlockPuzzleGame\BlockPuzzle.cpp(338,1): warning C4102: 'std': unreferenced label
   BlockPuzzleGame.vcxproj -> D:\BlockPuzzleGame\Debug\BlockPuzzleGame.exe

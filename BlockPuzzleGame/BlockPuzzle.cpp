@@ -6,6 +6,8 @@ constexpr int EAST = 1;
 constexpr int SOUTH = 2;
 constexpr int WEST = 3;
 
+#define PRINTER(name) printer(#name, (name))
+
 class BlockPuzzle : public olc::PixelGameEngine
 {
 public:
@@ -16,20 +18,73 @@ public:
 
 	//#s are solid blocks, .s are empty space
 	//TODO Add a separate floor string for the level so we can specify special tiles in the floor, and then put blocks on them, etc
-	std::string sLevel =
+	std::vector<std::string> levels;
+
+	std::string sLevel1 =
 		"################"
 		"#..............#"
-		"#........+.....#"
-		"#......P.......#"
 		"#..............#"
-		"#......#.......#"
-		"#...---....5...#"
 		"#..............#"
-		"#...-...+......#"
-		"#.......+......#"
-		"#..|....+....@.#"
-		"#..|.........@.#"
-		"#..|...........#"
+		"#..............#"
+		"#....P.+.......#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#............@.#"
+		"#..............#"
+		"#..............#"
+		"################";
+
+	std::string sLevel2 =
+		"################"
+		"#..............#"
+		"#..P........@..#"
+		"#..............#"
+		"#..............#"
+		"#......+.......#"
+		"#......+.......#"
+		"#......+.......#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#...........@@.#"
+		"#..............#"
+		"################";
+
+	std::string sLevel3 =
+		"################"
+		"#..............#"
+		"#..P........@..#"
+		"#..............#"
+		"#..............#"
+		"#......+.......#"
+		"#......+.......#"
+		"#......+.......#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#...........##.#"
+		"#...........@@##"
+		"#..............#"
+		"################";
+
+	std::string sLevel4 =
+		"################"
+		"#..............#"
+		"#..P........@..#"
+		"#..............#"
+		"#..............#"
+		"#......+.......#"
+		"#......+.......#"
+		"#......+.......#"
+		"#..............#"
+		"#..............#"
+		"#..............#"
+		"#...........##.#"
+		"#.........--@@##"
 		"#..............#"
 		"################";
 
@@ -38,7 +93,10 @@ public:
 
 	std::vector<olc::vi2d> vGoals;
 
+	int level = 0;
+
 	olc::Renderable gfxTiles;
+
 
 	struct block {
 		block() {
@@ -60,8 +118,7 @@ public:
 
 	struct block_solid : public block{
 		void DrawSelf(olc::PixelGameEngine* pge, const olc::vi2d& pos, const olc::vi2d& size, const olc::Renderable& skin) override{
-			//pge->FillRect(pos * size, size, olc::BLUE);
-			pge->DrawPartialSprite(pos * size, skin.Sprite(), olc::vi2d(0, 0) * size, size);
+			pge->FillRect(pos * size, size, olc::BLUE);
 		}
 		bool Push(const int from) override{
 			return false;
@@ -70,7 +127,8 @@ public:
 
 	struct block_player : public block {
 		void DrawSelf(olc::PixelGameEngine* pge, const olc::vi2d& pos, const olc::vi2d& size, const olc::Renderable& skin) override {
-			pge->FillRect(pos * size, size, olc::WHITE);
+			//pge->FillRect(pos * size, size, olc::WHITE);
+			pge->DrawPartialSprite(pos * size, skin.Sprite(), olc::vi2d(2, 0) * size, size);
 		}
 		bool Push(const int from) override {
 			return true;
@@ -138,7 +196,7 @@ public:
 
 		for (int y = 0; y < vLevelSize.y; y++) {
 			for (int x = 0; x < vLevelSize.x; x++) {
-				switch (sLevel[y * vLevelSize.x + x]) {
+				switch (levels[n][y * vLevelSize.x + x]) {
 				case '#':
 					vLevel.emplace_back(std::make_unique<block_solid>());
 					break;
@@ -172,6 +230,10 @@ public:
 
 	bool OnUserCreate() override
 	{
+		levels.push_back(sLevel1);
+		levels.push_back(sLevel2);
+		levels.push_back(sLevel3);
+		levels.push_back(sLevel4);
 		gfxTiles.Load("./Blocks.png");
 		LoadLevel(0);
 		return true;
@@ -179,7 +241,6 @@ public:
 
 	bool OnUserUpdate(float fElapsedTime) override
 	{
-
 		bool bPushing = false;
 		int dirPush = 0;
 
@@ -299,10 +360,22 @@ public:
 
 		}
 
+
 		int nGoals = 0;
 		for (auto& g : vGoals) {
 			if (vLevel[id(g)]) {
 				nGoals++;
+				if (nGoals == vGoals.size()) {
+					level+=1;
+					if (level >= levels.size()) {
+						//std::cout << levels.size() << std::endl;
+						break;
+					}
+					else {
+						LoadLevel(level);
+					}
+					std::cout << level << std::endl;
+				}
 			}
 		}
 
@@ -326,13 +399,26 @@ public:
 
 			}
 		}
+		
+		if (level >= levels.size()) {
+			DrawString(4, 4, "You win, press r to play again", olc::WHITE);
+			if (GetKey(olc::Key::R).bPressed) {
+				level = 0;
+				LoadLevel(0);
+			}
+		}
+		else {
+			DrawString(128, 4, "Level:" + std::to_string(level + 1), olc::WHITE);
+			DrawString(4, 4, "Goals: " + std::to_string(nGoals) + "/" + std::to_string(vGoals.size()), olc::WHITE);
+		}
 
-		DrawString(4, 4, "Goals: " + std::to_string(nGoals) + "/" + std::to_string(vGoals.size()), olc::WHITE);
 
 		
 		return true;
 	}
 };
+
+
 
 int main()
 {
